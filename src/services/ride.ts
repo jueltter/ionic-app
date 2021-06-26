@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
-import { Ride} from '../models/ride';
+import { Ride} from '../models/Ride';
 
 @Injectable()
 export class RideService {
@@ -14,6 +14,10 @@ export class RideService {
 
     public getAll() : Observable<[Ride]> {
         return this.http.get(this.url) as Observable<[Ride]>;
+    }
+
+    public create(ride: Ride) {
+        return this.http.post(this.url, ride);
     }
 
 }

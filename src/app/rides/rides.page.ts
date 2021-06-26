@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Ride } from 'src/models/ride';
+import { Ride } from 'src/models/Ride';
 import { RideService } from 'src/services/ride';
 
 @Component({
@@ -15,6 +15,10 @@ export class RidesPage implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.getRides();
+  }
+
+  getRides() {
     this.rides = this.rideService.getAll();
   }
 
