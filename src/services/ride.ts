@@ -1,5 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
+import { Observable } from "rxjs";
+import { Ride} from '../models/ride';
 
 @Injectable()
 export class RideService {
@@ -8,6 +10,10 @@ export class RideService {
         private http: HttpClient
     ) {
 
+    }
+
+    public getAll() : Observable<[Ride]> {
+        return this.http.get(this.url) as Observable<[Ride]>;
     }
 
 }
