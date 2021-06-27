@@ -5,5 +5,17 @@
 </ion-header>
 
 <ion-content>
-
+  <ion-list *ngIf="ride">
+    <ion-item color="dark">
+      <ion-label>Título de la rodada</ion-label>
+      <ion-input [(ngModel)]="ride.title"></ion-input>
+    </ion-item>
+    <ion-item color="dark">
+      <ion-label>Salida</ion-label>
+      <ion-datetime [(ngModel)]="ride.start" displayFormat="D MMM YYYY H:mm" min="2020" max="2023"></ion-datetime>
+    </ion-item>
+  </ion-list>
+  <ion-button class="ion-activatable" expand="block" color="secondary" (clic)="save()">
+    Guardar
+  </ion-button>
 </ion-content>
